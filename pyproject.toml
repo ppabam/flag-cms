@@ -1,0 +1,19 @@
+[project]
+name = "flag-cms"
+version = "0.1.0"
+description = "CMS for flag websites"
+authors = [
+    {name = "ppabam", email = "tom@diginori.com"},
+]
+dependencies = ["streamlit>=1.42.1"]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "Unlicense"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
