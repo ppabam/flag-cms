@@ -4,7 +4,6 @@ import flag_cms.utils as ut
 
 # https://docs.streamlit.io/develop/concepts/multipage-apps/page-and-navigation
 
-
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
@@ -26,9 +25,11 @@ def login():
                 st.error("🗝️ 꾸리꾸러 기러꾸 ㄴㅉㅇㄹ ㅇㄹㄲ")
 
 def logout():
-    if st.button("Log out"):
-        st.session_state.logged_in = False
-        st.rerun()
+    st.sidebar.balloons()
+    st.image("content/images/byby.gif")
+    time.sleep(5)
+    st.session_state.logged_in = False
+    st.rerun()
 
 # https://fonts.google.com/icons
 login_page = st.Page(login, title="Log in", icon=":material/login:")
@@ -46,6 +47,7 @@ search = st.Page("content/tools/search.py", title="Search", icon=":material/sear
 history = st.Page("content/tools/history.py", title="History", icon=":material/history:")
 
 if st.session_state.logged_in:
+    # st.sidebar.button("Log out", on_click=logout)
     pg = st.navigation(
         {
             "Account": [logout_page],
@@ -55,5 +57,7 @@ if st.session_state.logged_in:
     )
 else:
     pg = st.navigation([login_page])
+    
+
 
 pg.run()
