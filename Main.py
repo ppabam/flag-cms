@@ -25,9 +25,9 @@ def login():
                 st.error("🗝️ 꾸리꾸러 기러꾸 ㄴㅉㅇㄹ ㅇㄹㄲ")
 
 def logout():
-    st.sidebar.balloons()
+    # st.sidebar.balloons()
     st.image("content/images/byby.gif")
-    time.sleep(5)
+    time.sleep(10)
     st.session_state.logged_in = False
     st.rerun()
 
