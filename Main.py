@@ -8,6 +8,8 @@ if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
 def login():
+    st.image("content/images/934.jpg")
+    
     with st.form("loginform"):
         st.text_input("꾸리꾸러 기러꾸", key="magic_spell")
         submit_button = st.form_submit_button("Log in")
